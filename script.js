@@ -1,4 +1,4 @@
-const quotes = {
+const quotes = { // holds all data and information about the 5 philosophers
     musashi: {
         name: "Miyamoto Musashi",
         about: 'Miyamoto Musashi, born in 1584, is widely regarded as one of Japan\'s greatest swordsmen and strategists. He is renowned for his exceptional skill in the martial arts and his undefeated record in over 60 duels. Musashi\'s philosophical treatise, "The Book of Five Rings," continues to inspire martial artists and strategists worldwide, offering profound insights into strategy, tactics, and the way of the warrior. His legend and teachings have left an indelible mark on Japanese history and continue to resonate with people seeking personal mastery and enlightenment.',
@@ -7,7 +7,7 @@ const quotes = {
     tzu: {
         name: "Sun Tzu",
         about: "Sun Tzu, an ancient Chinese military strategist, is celebrated as the author of \"The Art of War,\" a seminal work that remains relevant today. Born around the 6th century BCE, Sun Tzu's profound insights into warfare, strategy, and leadership have had a lasting impact on military tactics and beyond. His emphasis on understanding one's enemy, adapting to changing circumstances, and leveraging psychological factors has made \"The Art of War\" a timeless guide for success in various domains, from business to politics. Sun Tzu's wisdom continues to inspire and influence individuals seeking strategic mastery and a deeper understanding of the dynamics of conflict.",
-        allQuotes: ["Appear weak when you are strong and strong when you are weak.", "The supreme art of war is to subdue the enemy without fighting.", "Opportunities multiply as they are seized.", "Know yourself and you will win all battles.", "If you know the enemy and know yourself, you need not fear the result of a hundred battles.", "Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat.", "In the midst of chaos, there is also opportunity.", "The greatest victory is that which requires no battle.", "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.", "Supreme excellence consists of breaking the enemy's resistance without fighting.", "To know your Enemy, you must become your Enemy.", "To fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.", ],
+        allQuotes: ["Appear weak when you are strong and strong when you are weak.", "The supreme art of war is to subdue the enemy without fighting.", "Opportunities multiply as they are seized.", "Know yourself and you will win all battles.", "If you know the enemy and know yourself, you need not fear the result of a hundred battles.", "Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat.", "In the midst of chaos, there is also opportunity.", "The greatest victory is that which requires no battle.", "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.", "Supreme excellence consists of breaking the enemy's resistance without fighting.", "To know your Enemy, you must become your Enemy.", "To fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.", "When angry, use your anger to beget strength, not to drive you to reckless action.", "The art of war teaches us to rely not on the likelihood of the enemy's not coming, but on our own readiness to receive him.", "The wise warrior avoids the battle.", "He who knows when he can fight and when he cannot will be victorious.", "The skillful leader subdues the enemy's troops without any fighting; he captures their cities without laying siege to them; he overthrows their kingdom without lengthy operations in the field.", "Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.", "When you surround an army, leave an outlet free. Do not press a desperate foe too hard.", "A leader leads by example, not by force."],
     },
     aristotle: {
         name: "Aristotle",
@@ -26,7 +26,7 @@ const quotes = {
     },
 };
 
-const randomQuote = () => {
+const randomQuote = () => { // Displays 1 random quote
     const philoNum = Math.floor(Math.random() * 5); // generates a random number from 0-4 that represents which philosopher we are picking from.
     const quoteNum = Math.floor(Math.random() * 20); // generates a random number from 0-19 which chooses the quote index from the quotes array.
     let name;
@@ -56,8 +56,8 @@ const randomQuote = () => {
     return `"${quote}" - ${name}`;
 };
 
-const displayMenu = () => {
-    console.log("Please choose an option below by entering the corresponding number:");
+const displayMenu = () => { // Displays Menu
+    console.log("\nPlease choose an option below by entering the corresponding number:");
     console.log("1. List available philosophers");
     console.log("2. Learn about philosophers");
     console.log("3. Generate quotes");
@@ -65,13 +65,25 @@ const displayMenu = () => {
     console.log("5. Exit\n");
 };
 
+const listOfPhilosophers = () => { // Displays list of philosophers
+    console.log(quotes.musashi.name);
+    console.log(quotes.tzu.name);
+    console.log(quotes.aristotle.name);
+    console.log(quotes.plato.name);
+    console.log(quotes.socrates.name);
+};
+
+// MAIN CODE
 console.log("\nWelcome to Messages From The Past!\n");
 console.log("Daily Quote:")
 console.log(randomQuote());
-console.log("\n");
 let choice = 0;
 while(choice !== "5") {
     displayMenu();
     const prompt = require('prompt-sync')();
     choice = prompt("Enter a valid option number: ");
+    console.log();
+    if (choice === "1") {
+        listOfPhilosophers();
+    }
 };
