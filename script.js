@@ -70,7 +70,8 @@ console.log("Daily Quote:")
 console.log(randomQuote());
 console.log("\n");
 let choice = 0;
-while(choice !== 5) {
+while(choice !== "5") {
     displayMenu();
-    choice = 5;
+    const prompt = require('prompt-sync')();
+    choice = prompt("Enter a valid option number: ");
 };
