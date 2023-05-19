@@ -56,4 +56,7 @@ const randomQuote = () => {
     return `"${quote}" - ${name}`;
 };
 
+console.log("\nWelcome to Messages From The Past!\n");
+console.log("Daily Quote:")
 console.log(randomQuote());
+console.log("\n");
