@@ -56,7 +56,21 @@ const randomQuote = () => {
     return `"${quote}" - ${name}`;
 };
 
+const displayMenu = () => {
+    console.log("Please choose an option below by entering the corresponding number:");
+    console.log("1. List available philosophers");
+    console.log("2. Learn about philosophers");
+    console.log("3. Generate quotes");
+    console.log("4. Filter quotes based on subject");
+    console.log("5. Exit\n");
+};
+
 console.log("\nWelcome to Messages From The Past!\n");
 console.log("Daily Quote:")
 console.log(randomQuote());
 console.log("\n");
+let choice = 0;
+while(choice !== 5) {
+    displayMenu();
+    choice = 5;
+};
