@@ -34,6 +34,11 @@ const quotes = { // holds all data and information about the 5 philosophers
     selfImprovementNames: ["Miyamoto Musashi", "Miyamoto Musashi", "Miyamoto Musashi", "Miyamoto Musashi", "Miyamoto Musashi", "Sun Tzu", "Sun Tzu", "Sun Tzu", "Aristotle", "Aristotle", "Aristotle", "Aristotle", "Aristotle", "Aristotle", "Aristotle", "Plato", "Plato", "Plato", "Plato", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates", "Socrates"],
 };
 
+const art = {
+    menu: "",
+    selfImprovement: "",
+};
+
 const randomQuote = (numOfPhilo, numOfQuotes) => { // Displays 1 random quote
     alreadyDisplayed = [];
     let alreadyIn = true;
@@ -131,6 +136,7 @@ const aboutMenu = () => { // Displays menu of philosophers to learn about
     }
     else {
         console.log("Invalid choice. Please try again.");
+        return;
     }
     const prompt2 = require('prompt-sync')();
     choice = prompt("\nPress enter to exit back to menu whenever you are ready.   ");
@@ -165,6 +171,44 @@ const quoteMenu = () => {
     choice = prompt("Press enter to exit back to menu whenever you are ready.   ");
 };
 
+const filterMenu = () => {
+    let choice = "not yet";
+    let quotesArr;
+    let namesArr;
+    console.log(`1. Time Management`);
+    console.log(`2. Life Perspective`);
+    console.log(`3. Martial Art`);
+    console.log(`4. Self Improvement\n`);
+    const prompt = require('prompt-sync')();
+    choice = prompt("Enter the corresponding number for catregory in which to filter quotes by:    ");
+    console.log();
+    if (choice == "1") {
+        quotesArr = quotes.timeManagement;
+        namesArr = quotes.timeManagementNames;
+    }
+    else if (choice == "2") {
+        quotesArr = quotes.lifePerspective;
+        namesArr = quotes.lifePerspectiveNames;
+    }
+    else if (choice == "3") {
+        quotesArr = quotes.martialArt;
+        namesArr = quotes.martialArtNames;
+    }
+    else if (choice == "4") {
+        quotesArr = quotes.selfImprovement;
+        namesArr = quotes.selfImprovementNames;
+    }
+    else {
+        console.log("Invalid choice. Please try again.");
+        return;
+    }
+    for (let i = 0; i < quotesArr.length; i++) {
+        console.log(`"${quotesArr[i]}" - ${namesArr[i]}`);
+    };
+    const prompt2 = require('prompt-sync')();
+    choice = prompt("\nPress enter to exit back to menu whenever you are ready.   ");
+};
+
 // MAIN CODE
 console.log("\nWelcome to Messages From The Past!\n");
 console.log("Daily Quote:")
@@ -186,7 +230,7 @@ while(choice !== "5") {
         quoteMenu();
     }
     else if (choice === "4") {
-        
+        filterMenu();
     }
     else if (choice === "5") {
         console.log("Bye for now! Have a wonderful rest of your day!\n");
