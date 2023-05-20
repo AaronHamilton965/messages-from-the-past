@@ -263,18 +263,28 @@ const aboutMenu = () => { // Displays menu of philosophers to learn about
     choice = prompt("Enter the corresponding number of the philosopher you would like to learn about:    ");
     console.log();
     if (choice == "1") {
+        console.log(art.katana);
+        console.log();
         console.log(quotes.musashi.about);
     }
     else if (choice == "2") {
+        console.log(art.dragon);
+        console.log();
         console.log(quotes.tzu.about);
     }
     else if (choice == "3") {
+        console.log(art.philosospher);
+        console.log();
         console.log(quotes.aristotle.about);
     }
     else if (choice == "4") {
+        console.log(art.greekTemple);
+        console.log();
         console.log(quotes.plato.about);
     }
     else if (choice == "5") {
+        console.log(art.vase);
+        console.log();
         console.log(quotes.socrates.about);
     }
     else {
@@ -303,9 +313,34 @@ const quoteMenu = () => {
     const prompt2 = require('prompt-sync')();
     choice = prompt("Enter the corresponding number of the philosopher you would like to generate quotes from:    ");
     let numChoice2 = parseInt(choice, 10); // converts choice into actual number value
+    console.log();
     if (numChoice2 < 1 || numChoice2 > 6) {
-        console.log("\nInvalid choice. Please try again.");
+        console.log("Invalid choice. Please try again.");
         return;
+    }
+    else if (numChoice2 == 1) {
+        console.log(art.katana);
+        console.log();
+    }
+    else if (numChoice2 == 2) {
+        console.log(art.dragon);
+        console.log();
+    }
+    else if (numChoice2 == 3) {
+        console.log(art.philosospher);
+        console.log();
+    }
+    else if (numChoice2 == 4) {
+        console.log(art.greekTemple);
+        console.log();
+    }
+    else if (numChoice2 == 5) {
+        console.log(art.vase);
+        console.log();
+    }
+    else if (numChoice2 == 6) {
+        randomArt();
+        console.log();
     }
     console.log();
     randomQuote(numChoice2, numChoice1);
@@ -326,18 +361,26 @@ const filterMenu = () => {
     choice = prompt("Enter the corresponding number for catregory in which to filter quotes by:    ");
     console.log();
     if (choice == "1") {
+        console.log(art.clock);
+        console.log();
         quotesArr = quotes.timeManagement;
         namesArr = quotes.timeManagementNames;
     }
     else if (choice == "2") {
+        console.log(art.eye);
+        console.log();
         quotesArr = quotes.lifePerspective;
         namesArr = quotes.lifePerspectiveNames;
     }
     else if (choice == "3") {
+        console.log(art.battle);
+        console.log();
         quotesArr = quotes.martialArt;
         namesArr = quotes.martialArtNames;
     }
     else if (choice == "4") {
+        console.log(art.meditation);
+        console.log();
         quotesArr = quotes.selfImprovement;
         namesArr = quotes.selfImprovementNames;
     }
