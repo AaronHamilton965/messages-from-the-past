@@ -57,20 +57,58 @@ const randomQuote = () => { // Displays 1 random quote
 };
 
 const displayMenu = () => { // Displays Menu
-    console.log("\nPlease choose an option below by entering the corresponding number:");
+    console.log("\n****************************************************************************");
+    console.log("Please choose an option below by entering the corresponding number:");
     console.log("1. List available philosophers");
     console.log("2. Learn about philosophers");
     console.log("3. Generate quotes");
     console.log("4. Filter quotes based on subject");
-    console.log("5. Exit\n");
+    console.log("5. Exit");
+    console.log("****************************************************************************\n");
 };
 
 const listOfPhilosophers = () => { // Displays list of philosophers
-    console.log(quotes.musashi.name);
-    console.log(quotes.tzu.name);
-    console.log(quotes.aristotle.name);
-    console.log(quotes.plato.name);
-    console.log(quotes.socrates.name);
+    let choice = "not yet";
+    console.log(`${quotes.musashi.name}`);
+    console.log(`${quotes.tzu.name}`);
+    console.log(`${quotes.aristotle.name}`);
+    console.log(`${quotes.plato.name}`);
+    console.log(`${quotes.socrates.name}\n`);
+    const prompt = require('prompt-sync')();
+    choice = prompt("Press any key, then hit enter to exit back to menu whenever you are ready.   ");
+};
+
+const aboutMenu = () => { // Displays menu of philosophers to learn about
+    let choice = "not yet";
+    console.log(`1. ${quotes.musashi.name}`);
+    console.log(`2. ${quotes.tzu.name}`);
+    console.log(`3. ${quotes.aristotle.name}`);
+    console.log(`4. ${quotes.plato.name}`);
+    console.log(`5. ${quotes.socrates.name}\n`);
+    const prompt = require('prompt-sync')();
+    choice = prompt("Enter the number of the philosopher you would like to learn about:    ");
+    console.log();
+    if (choice == "1") {
+        console.log(quotes.musashi.about);
+    }
+    else if (choice == "2") {
+        console.log(quotes.tzu.about);
+    }
+    else if (choice == "3") {
+        console.log(quotes.aristotle.about);
+    }
+    else if (choice == "4") {
+        console.log(quotes.plato.about);
+    }
+    else if (choice == "5") {
+        console.log(quotes.socrates.about);
+    }
+    const prompt2 = require('prompt-sync')();
+    choice = prompt("Press any key, then hit enter to exit back to menu whenever you are ready.   ");
+}
+
+const quoteMenu = () => {
+
 };
 
 // MAIN CODE
@@ -85,5 +123,11 @@ while(choice !== "5") {
     console.log();
     if (choice === "1") {
         listOfPhilosophers();
+    }
+    else if (choice === "2") {
+        aboutMenu();
+    }
+    else if (choice === "3") {
+        quoteMenu();
     }
 };
