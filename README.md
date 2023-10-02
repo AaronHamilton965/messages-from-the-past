@@ -22,7 +22,7 @@ The final feature is the filter option. This was added on a whim, but it allows 
 ![filter](https://github.com/AaronHamilton965/messages-from-the-past/assets/91709196/12ff6592-c361-4762-8c5b-9cffce68cec0)
 
 ## How To Use
-To use the program, simply run the command node script.js in your CLI to run the main cript of the program. Then, just follow the prompts to use the corresponding features, or to exit. Enjoy the knowledge!
+To use the program, simply run the command node script.js in your CLI to run the main script of the program. Then, just follow the prompts to use the corresponding features, or to exit. Enjoy the knowledge!
 ## Technologies
 Vanilla JavaScript makes up the majority of this project, it uses loops for the menu system and objects to hold the data. I use the prompt() function to gather user input and I use the Math.random() function in order to generate randomness for the quote generation. I use the Node.js environment to run this console app. I use Git to version control my program and track all the changes I make, and use Github to store all my code from my local repository into a remote one!
 ## Collaborators
